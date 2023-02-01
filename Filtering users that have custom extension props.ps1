@@ -27,3 +27,18 @@ $usersWithExtNotTrue = $usersWithExt | Where-Object {$_.additionalProperties.ext
 
 $usersWithExtNotTrue 
 
+
+########################################
+
+#Filtering by identities
+
+$domain = "onmicrosoft.com"
+
+$allUsers = Get-MgUser -all -Property displayName, identities, userPrincipalName |  Select-Object -Property displayName, userPrincipalName -ExpandProperty identities
+
+
+$matchedUser = $allUsers | Where-Object {$_.IssuerAssignedId -Match $domain }
+
+
+$matchedUser.DisplayName
+$matchedUser.userPrincipalName
