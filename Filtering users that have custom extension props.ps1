@@ -55,3 +55,8 @@ $user3 = Get-MgUser -UserId "<usr obj id>"
 $user3.additionalProperties
 
 #this will list all extension props for the user
+
+$user3 = Get-MgUser -UserId "obj id" -Property "extension_<tenant id>_MyExtExample"
+$user3.additionalProperties
+
+#v1 has the fall of requiring you remember and include all extension props (best use line 53)
