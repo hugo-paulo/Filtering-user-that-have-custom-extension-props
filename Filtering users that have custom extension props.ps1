@@ -48,3 +48,10 @@ $matchedUser.userPrincipalName
 Getting an available extension properties
 https://learn.microsoft.com/en-us/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0&tabs=csharp#request-body
 
+#when getting extension properties for a user and not using the select prop, because can't remember it's name use the beta version of API
+
+Select-MgProfile -Name "beta"
+$user3 = Get-MgUser -UserId "<usr obj id>" 
+$user3.additionalProperties
+
+#this will list all extension props for the user
