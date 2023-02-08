@@ -42,3 +42,9 @@ $matchedUser = $allUsers | Where-Object {$_.IssuerAssignedId -Match $domain }
 
 $matchedUser.DisplayName
 $matchedUser.userPrincipalName
+
+
+#########################################
+Getting an available extension properties
+https://learn.microsoft.com/en-us/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0&tabs=csharp#request-body
+
